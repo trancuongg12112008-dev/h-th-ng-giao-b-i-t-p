@@ -1,0 +1,51 @@
+HƯỚNG DẪN TẠO FILE WORD CHO CÂU HỎI TRẮC NGHIỆM
+================================================
+
+Cách 1: Sử dụng Microsoft Word
+-------------------------------
+1. Mở Microsoft Word
+2. Nhập câu hỏi theo định dạng:
+
+Câu hỏi 1?
+A. Đáp án A
+B. Đáp án B
+C. Đáp án C
+D. Đáp án D
+Đáp án: A
+
+Câu hỏi 2?
+A. Đáp án A
+B. Đáp án B
+C. Đáp án C
+D. Đáp án D
+Đáp án: B
+
+3. Lưu file với định dạng .docx
+
+
+Cách 2: Sử dụng Google Docs
+----------------------------
+1. Mở Google Docs (docs.google.com)
+2. Nhập câu hỏi theo định dạng như trên
+3. File > Download > Microsoft Word (.docx)
+
+
+Cách 3: Chuyển đổi từ file TXT
+-------------------------------
+1. Tạo file .txt với nội dung câu hỏi
+2. Mở file .txt bằng Word
+3. Lưu lại dưới dạng .docx
+
+
+LƯU Ý QUAN TRỌNG:
+-----------------
+- Mỗi câu hỏi phải có đúng 4 đáp án (A, B, C, D)
+- Dòng "Đáp án:" phải có chữ cái A, B, C hoặc D
+- Để trống 1 dòng giữa các câu hỏi
+- Không sử dụng định dạng đặc biệt (bold, italic, màu sắc)
+
+
+VÍ DỤ FILE MẪU:
+---------------
+Xem file: cau-hoi-mau.txt
+Hoặc: cau-hoi-mau.json

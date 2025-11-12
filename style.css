@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 20px;
+}
+
+.user-info {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.user-info span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-logout {
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: white;
+    color: #667eea;
+}
+
+.login-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.login-tab-btn {
+    padding: 10px 30px;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.login-tab-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+.login-tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.login-form {
+    display: none;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-form.active {
+    display: block;
+}
+
+.login-hint {
+    text-align: center;
+    margin-top: 15px;
+    color: #718096;
+    font-size: 14px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.tab-btn {
+    padding: 10px 30px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background: white;
+    color: #667eea;
+}
+
+.tab-btn.active {
+    background: white;
+    color: #667eea;
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-success {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #38a169;
+}
+
+.assignment-card {
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.assignment-card h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.assignment-card p {
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+.assignment-card .deadline {
+    color: #e53e3e;
+    font-weight: 600;
+}
+
+.submission-form {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.submission-item {
+    background: #edf2f7;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.submission-item strong {
+    color: #2d3748;
+}
+
+h2 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667eea;
+}
+
+.btn-edit {
+    padding: 8px 16px;
+    background: #f59e0b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-edit:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    padding: 8px 16px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.quiz-question-card {
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.quiz-option {
+    display: grid;
+    grid-template-columns: auto 100px 1fr;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.quiz-option span {
+    font-weight: 500;
+    color: #4a5568;
+    text-align: center;
+}
+
+.quiz-option input[type="text"] {
+    width: 100%;
+}
+
+.quiz-option input[type="radio"] {
+    cursor: pointer;
+    justify-self: center;
+}
+
+.quiz-result {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f0f9ff;
+    border: 2px solid #3b82f6;
+}
+
+.quiz-result.correct {
+    background: #e6ffed;
+    border-color: #48bb78;
+}
+
+.quiz-result.incorrect {
+    background: #fee;
+    border-color: #ef4444;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    background: white;
+}
+
+input[type="file"]:hover {
+    border-color: #3b82f6;
+}
+
+.question-image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+}
+
+.quiz-timer {
+    position: sticky;
+    top: 20px;
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #856404;
+    z-index: 100;
+}
+
+.quiz-timer.warning {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}

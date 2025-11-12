@@ -1,0 +1,25 @@
+{
+  "questions": [
+    {
+      "question": "Đây là hình gì?",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjgwIiBmaWxsPSIjNjY3ZWVhIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iNDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+8J+Yig==</text>Cjwvc3ZnPg==",
+      "options": [
+        "Hình vuông",
+        "Hình tròn",
+        "Hình tam giác",
+        "Hình chữ nhật"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Câu hỏi không có hình ảnh",
+      "options": [
+        "Đáp án A",
+        "Đáp án B",
+        "Đáp án C",
+        "Đáp án D"
+      ],
+      "correctAnswer": 0
+    }
+  ]
+}

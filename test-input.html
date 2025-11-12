@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .test-box {
+            border: 2px solid #3b82f6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .result {
+            background: #f0f9ff;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Input Fields</h1>
+    
+    <div class="test-box">
+        <h3>Test 1: Input thông thường</h3>
+        <input type="text" id="test1" placeholder="Nhập gì đó vào đây...">
+        <div class="result">Giá trị: <span id="result1">-</span></div>
+    </div>
+
+    <div class="test-box">
+        <h3>Test 2: Input được tạo bằng JavaScript</h3>
+        <div id="container2"></div>
+        <div class="result">Giá trị: <span id="result2">-</span></div>
+    </div>
+
+    <div class="test-box">
+        <h3>Test 3: Giống như trong quiz form</h3>
+        <div id="container3"></div>
+        <div class="result">Giá trị: <span id="result3">-</span></div>
+    </div>
+
+    <script>
+        // Test 1
+        document.getElementById('test1').oninput = function() {
+            document.getElementById('result1').textContent = this.value;
+        };
+
+        // Test 2
+        const input2 = document.createElement('input');
+        input2.type = 'text';
+        input2.placeholder = 'Input tạo bằng JS...';
+        input2.oninput = function() {
+            document.getElementById('result2').textContent = this.value;
+        };
+        document.getElementById('container2').appendChild(input2);
+
+        // Test 3 - Giống quiz
+        let testData = { id: 1, question: '' };
+        
+        const formGroup = document.createElement('div');
+        const label = document.createElement('label');
+        label.textContent = 'Câu hỏi:';
+        formGroup.appendChild(label);
+        
+        const input3 = document.createElement('input');
+        input3.type = 'text';
+        input3.placeholder = 'Nhập câu hỏi...';
+        input3.value = testData.question;
+        input3.oninput = function() {
+            testData.question = this.value;
+            document.getElementById('result3').textContent = testData.question;
+            console.log('Updated:', testData.question);
+        };
+        formGroup.appendChild(input3);
+        document.getElementById('container3').appendChild(formGroup);
+    </script>
+</body>
+</html>

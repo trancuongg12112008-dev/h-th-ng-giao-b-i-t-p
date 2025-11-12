@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Giao và Nộp Bài Tập</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mammoth@1.6.0/mammoth.browser.min.js"></script>
+</head>
+<body>
+    <!-- Màn hình đăng nhập -->
+    <div id="login-screen" class="container">
+        <header>
+            <h1>📚 Hệ Thống Quản Lý Bài Tập</h1>
+            <p style="margin-top: 10px; font-size: 18px;">Vui lòng đăng nhập để tiếp tục</p>
+        </header>
+        
+        <div class="tab-content active">
+            <div class="login-tabs">
+                <button class="login-tab-btn active" onclick="showLoginForm('teacher')">Giáo Viên</button>
+                <button class="login-tab-btn" onclick="showLoginForm('student')">Học Sinh</button>
+            </div>
+
+            <!-- Form đăng nhập giáo viên -->
+            <div id="teacher-login-form" class="login-form active">
+                <h2>Đăng Nhập Giáo Viên</h2>
+                <form onsubmit="loginTeacher(event)">
+                    <div class="form-group">
+                        <label>Tên đăng nhập:</label>
+                        <input type="text" id="teacher-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu:</label>
+                        <input type="password" id="teacher-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+                </form>
+            </div>
+
+            <!-- Form đăng nhập học sinh -->
+            <div id="student-login-form" class="login-form">
+                <h2>Đăng Nhập Học Sinh</h2>
+                <form onsubmit="loginStudent(event)">
+                    <div class="form-group">
+                        <label>Tên đăng nhập:</label>
+                        <input type="text" id="student-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mã học sinh:</label>
+                        <input type="password" id="student-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Đăng Nhập</button>
+                </form>
+                <p class="login-hint" style="margin-top: 20px;">
+                    <a href="#" onclick="showRegisterForm(); return false;" style="color: #667eea; text-decoration: underline;">
+                        Chưa có tài khoản? Đăng ký ngay
+                    </a>
+                </p>
+            </div>
+
+            <!-- Form đăng ký học sinh -->
+            <div id="student-register-form" class="login-form">
+                <h2>Đăng Ký Học Sinh</h2>
+                <form onsubmit="registerStudent(event)">
+                    <div class="form-group">
+                        <label>Họ và tên:</label>
+                        <input type="text" id="register-fullname" placeholder="Nguyễn Văn A" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tên đăng nhập:</label>
+                        <input type="text" id="register-username" placeholder="nguyenvana" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mã học sinh (mật khẩu):</label>
+                        <input type="password" id="register-password" placeholder="Tối thiểu 4 ký tự" required minlength="4">
+                    </div>
+                    <button type="submit" class="btn btn-success">Đăng Ký</button>
+                </form>
+                <p class="login-hint" style="margin-top: 20px;">
+                    <a href="#" onclick="showLoginForm('student'); return false;" style="color: #667eea; text-decoration: underline;">
+                        Đã có tài khoản? Đăng nhập
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Màn hình chính -->
+    <div id="main-screen" class="container" style="display: none;">
+        <header>
+            <h1>📚 Hệ Thống Quản Lý Bài Tập</h1>
+            <div class="user-info">
+                <span id="current-user"></span>
+                <button class="btn-logout" onclick="logout()">Đăng Xuất</button>
+            </div>
+            <div class="tabs" id="main-tabs" style="display: none;">
+                <button class="tab-btn active" onclick="showTab('teacher')">Giáo Viên</button>
+                <button class="tab-btn" onclick="showTab('student')">Học Sinh</button>
+            </div>
+        </header>
+
+        <!-- Tab Giáo Viên -->
+        <div id="teacher-tab" class="tab-content active">
+            <h2>Giao Bài Tập Mới</h2>
+            
+            <div class="form-group">
+                <label>Loại bài tập:</label>
+                <div style="display: flex; gap: 15px; margin-top: 10px;">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="radio" name="assignment-type" value="essay" checked onchange="toggleAssignmentType()">
+                        <span>Bài tập tự luận</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="radio" name="assignment-type" value="quiz" onchange="toggleAssignmentType()">
+                        <span>Bài tập trắc nghiệm</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Form bài tập tự luận -->
+            <form id="assignment-form">
+                <div class="form-group">
+                    <label>Tiêu đề bài tập:</label>
+                    <input type="text" id="assignment-title" required>
+                </div>
+                <div class="form-group">
+                    <label>Hạn nộp:</label>
+                    <input type="datetime-local" id="assignment-deadline" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Giao Bài Tập</button>
+            </form>
+
+            <!-- Form bài tập trắc nghiệm -->
+            <form id="quiz-form" style="display: none;">
+                <div class="form-group">
+                    <label>Tiêu đề bài tập:</label>
+                    <input type="text" id="quiz-title" required>
+                </div>
+                <div class="form-group">
+                    <label>Hạn nộp:</label>
+                    <input type="datetime-local" id="quiz-deadline" required>
+                </div>
+                <div class="form-group">
+                    <label>Thời gian làm bài (phút):</label>
+                    <input type="number" id="quiz-duration" min="1" max="180" value="30" required>
+                </div>
+
+                <h3 style="margin-top: 20px; margin-bottom: 15px;">Câu hỏi trắc nghiệm</h3>
+                
+                <div class="form-group" style="background: #f0f9ff; padding: 15px; border-radius: 8px; border: 2px dashed #3b82f6;">
+                    <label>📁 Nhập câu hỏi từ file (tùy chọn):</label>
+                    <input type="file" id="quiz-file-input" accept=".txt,.json,.doc,.docx" onchange="handleQuizFileUpload(event)">
+                    <p style="font-size: 13px; color: #718096; margin-top: 8px;">
+                        💡 Hỗ trợ: .txt, .json, .docx (có thể chứa hình ảnh)<br>
+                        <br>
+                        <strong>Định dạng file .txt hoặc .docx:</strong><br>
+                        Câu hỏi 1?<br>
+                        [Hình ảnh nếu có]<br>
+                        A. Đáp án A<br>
+                        B. Đáp án B<br>
+                        C. Đáp án C<br>
+                        D. Đáp án D<br>
+                        Đáp án: A<br>
+                        <br>
+                        <strong>File Word:</strong> Chèn hình ảnh trực tiếp vào câu hỏi<br>
+                        <strong>File JSON:</strong> Dùng Base64 hoặc URL cho trường "image"
+                    </p>
+                </div>
+
+                <div id="quiz-questions-container"></div>
+                
+                <button type="button" class="btn btn-success" onclick="addQuizQuestion()" style="margin-top: 10px;">
+                    ➕ Thêm câu hỏi thủ công
+                </button>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Giao Bài Tập</button>
+            </form>
+
+            <h2>Danh Sách Bài Tập Đã Giao</h2>
+            <div id="assignments-list"></div>
+        </div>
+
+        <!-- Tab Học Sinh -->
+        <div id="student-tab" class="tab-content">
+            <h2>Bài Tập Cần Làm</h2>
+            <div id="student-assignments-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

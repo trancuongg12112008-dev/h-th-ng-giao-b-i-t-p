@@ -1,0 +1,83 @@
+HƯỚNG DẪN THÊM HÌNH ẢNH VÀO CÂU HỎI TRẮC NGHIỆM
+================================================
+
+Có 3 cách để thêm hình ảnh vào câu hỏi:
+
+1. UPLOAD TRỰC TIẾP (Đơn giản nhất)
+------------------------------------
+- Tạo câu hỏi trắc nghiệm thủ công
+- Mỗi câu hỏi có nút upload file
+- Click và chọn hình ảnh từ máy tính
+- Hình ảnh sẽ hiển thị ngay
+
+
+2. FILE WORD (.docx)
+--------------------
+- Tạo file Word với câu hỏi
+- Chèn hình ảnh trực tiếp vào Word (Insert > Picture)
+- Đặt hình ảnh ngay sau câu hỏi, trước các đáp án
+- Lưu file và upload
+
+Ví dụ trong Word:
+---
+Câu hỏi 1: Đây là hình gì?
+[Chèn hình ảnh ở đây]
+A. Hình vuông
+B. Hình tròn
+C. Hình tam giác
+D. Hình chữ nhật
+Đáp án: B
+---
+
+
+3. FILE JSON
+------------
+- Thêm trường "image" với URL hoặc Base64
+- URL: Link hình ảnh trên internet
+- Base64: Mã hóa hình ảnh thành text
+
+Ví dụ JSON với URL:
+{
+  "questions": [
+    {
+      "question": "Đây là hình gì?",
+      "image": "https://example.com/image.jpg",
+      "options": ["A", "B", "C", "D"],
+      "correctAnswer": 0
+    }
+  ]
+}
+
+Ví dụ JSON với Base64:
+{
+  "questions": [
+    {
+      "question": "Đây là hình gì?",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANS...",
+      "options": ["A", "B", "C", "D"],
+      "correctAnswer": 0
+    }
+  ]
+}
+
+
+CHUYỂN ĐỔI HÌNH ẢNH SANG BASE64
+--------------------------------
+Cách 1: Dùng website online
+- Truy cập: base64-image.de hoặc base64.guru
+- Upload hình ảnh
+- Copy mã Base64
+
+Cách 2: Dùng Python
+import base64
+with open("image.jpg", "rb") as f:
+    encoded = base64.b64encode(f.read()).decode()
+    print(f"data:image/jpeg;base64,{encoded}")
+
+
+LƯU Ý
+-----
+- Hình ảnh trong Word sẽ tự động chuyển sang Base64
+- Hình ảnh được lưu trong localStorage (giới hạn ~5-10MB)
+- Nên dùng hình ảnh nhỏ gọn để tránh quá tải
+- Định dạng hỗ trợ: JPG, PNG, GIF, SVG

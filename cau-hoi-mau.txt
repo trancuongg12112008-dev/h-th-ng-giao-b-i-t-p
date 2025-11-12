@@ -1,0 +1,33 @@
+Thủ đô của Việt Nam là gì?
+A. Hà Nội
+B. Hồ Chí Minh
+C. Đà Nẵng
+D. Huế
+Đáp án: A
+
+Ai là người phát hiện ra châu Mỹ?
+A) Marco Polo
+B) Christopher Columbus
+C) Vasco da Gama
+D) Ferdinand Magellan
+Answer: B
+
+2 + 2 bằng bao nhiêu?
+A. 3
+* B. 4
+C. 5
+D. 6
+
+Hành tinh nào gần Mặt Trời nhất?
+A. Trái Đất
+B. Sao Hỏa
+C. Sao Thủy
+D. Sao Kim
+Correct: C
+
+Ngôn ngữ lập trình nào được sử dụng để phát triển web?
+A. Python
+B. JavaScript
+C. Java
+D. C++
+Đúng: B

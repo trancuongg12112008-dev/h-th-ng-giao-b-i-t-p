@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "question": "Thủ đô của Việt Nam là gì?",
+      "options": [
+        "Hà Nội",
+        "Hồ Chí Minh",
+        "Đà Nẵng",
+        "Huế"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Ai là người phát hiện ra châu Mỹ?",
+      "options": [
+        "Marco Polo",
+        "Christopher Columbus",
+        "Vasco da Gama",
+        "Ferdinand Magellan"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "2 + 2 bằng bao nhiêu?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Hành tinh nào gần Mặt Trời nhất?",
+      "options": [
+        "Trái Đất",
+        "Sao Hỏa",
+        "Sao Thủy",
+        "Sao Kim"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Ngôn ngữ lập trình nào được sử dụng để phát triển web?",
+      "options": [
+        "Python",
+        "JavaScript",
+        "Java",
+        "C++"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

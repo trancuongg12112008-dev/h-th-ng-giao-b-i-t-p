@@ -1,0 +1,77 @@
+CÁC ĐỊNH DẠNG ĐÁP ÁN ĐƯỢC HỖ TRỢ
+==================================
+
+Hệ thống tự động nhận dạng đáp án đúng từ nhiều định dạng khác nhau:
+
+1. ĐỊNH DẠNG CHUẨN
+-------------------
+Câu hỏi?
+A. Đáp án A
+B. Đáp án B
+C. Đáp án C
+D. Đáp án D
+Đáp án: B
+
+✅ Hỗ trợ: "Đáp án:", "Answer:", "Correct:", "Đúng:"
+
+
+2. ĐỊNH DẠNG VỚI DẤU NGOẶC ĐƠN
+-------------------------------
+Câu hỏi?
+A) Đáp án A
+B) Đáp án B
+C) Đáp án C
+D) Đáp án D
+Đáp án: C
+
+✅ Hỗ trợ cả "A." và "A)"
+
+
+3. ĐỊNH DẠNG VỚI DẤU SAO (*)
+-----------------------------
+Câu hỏi?
+A. Đáp án A
+* B. Đáp án B (đáp án đúng)
+C. Đáp án C
+D. Đáp án D
+
+✅ Dấu sao (*) đánh dấu đáp án đúng
+✅ Không cần dòng "Đáp án:"
+
+
+4. ĐỊNH DẠNG TIẾNG ANH
+-----------------------
+Question?
+A. Answer A
+B. Answer B
+C. Answer C
+D. Answer D
+Answer: A
+
+✅ Hỗ trợ: "Answer:", "Correct:"
+
+
+5. ĐỊNH DẠNG LINH HOẠT
+-----------------------
+Đáp án: A
+Đáp án: A (Giải thích thêm)
+Đáp án: a (viết thường)
+Answer: B
+Correct: C
+Đúng: D
+
+✅ Tự động chuyển chữ thường thành chữ hoa
+✅ Bỏ qua text thêm sau đáp án
+
+
+LƯU Ý QUAN TRỌNG
+----------------
+- Mỗi câu hỏi PHẢI có đúng 4 đáp án (A, B, C, D)
+- Đáp án đúng phải là A, B, C, hoặc D
+- Nếu không có dòng đáp án, mặc định chọn A
+- Dấu sao (*) chỉ hoạt động khi đặt trước đáp án
+
+
+VÍ DỤ FILE MẪU
+--------------
+Xem file: cau-hoi-nhieu-dinh-dang.txt

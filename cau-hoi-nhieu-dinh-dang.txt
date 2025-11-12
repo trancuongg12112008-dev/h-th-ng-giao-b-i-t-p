@@ -1,0 +1,54 @@
+Câu 1: Định dạng chuẩn với "Đáp án:"
+A. Đáp án sai 1
+B. Đáp án đúng
+C. Đáp án sai 2
+D. Đáp án sai 3
+Đáp án: B
+
+Câu 2: Định dạng với dấu ngoặc đơn
+A) Đáp án sai 1
+B) Đáp án sai 2
+C) Đáp án đúng
+D) Đáp án sai 3
+Đáp án: C
+
+Câu 3: Định dạng tiếng Anh
+A. Wrong answer 1
+B. Wrong answer 2
+C. Wrong answer 3
+D. Correct answer
+Answer: D
+
+Câu 4: Định dạng với dấu sao đánh dấu đáp án đúng
+A. Đáp án sai 1
+* B. Đáp án đúng (có dấu sao)
+C. Đáp án sai 2
+D. Đáp án sai 3
+
+Câu 5: Định dạng "Correct:"
+A. Wrong
+B. Wrong
+C. Wrong
+D. Right
+Correct: D
+
+Câu 6: Định dạng "Đúng:"
+A. Sai
+B. Sai
+C. Đúng
+D. Sai
+Đúng: C
+
+Câu 7: Đáp án có thêm text
+A. Đáp án A
+B. Đáp án B
+C. Đáp án C
+D. Đáp án D
+Đáp án: A (Đây là đáp án đúng)
+
+Câu 8: Đáp án viết thường
+A. Đáp án A
+B. Đáp án B
+C. Đáp án C
+D. Đáp án D
+Đáp án: b
